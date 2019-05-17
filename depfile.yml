@@ -1,0 +1,26 @@
+paths:
+    - ./src
+exclude_files:
+    - .*tests.*
+layers:
+    - name: Actions
+      collectors:
+          - type: className
+            regex: .*App\\Actions\\.*
+    - name: RequestResolver
+      collectors:
+          - type: className
+            regex: .*RequestResolver.*
+    -   name: Loader
+        collectors:
+            - type: className
+              regex: .*Loader.*
+    -   name: Persister
+        collectors:
+            - type: className
+              regex: .*Persister.*
+ruleset:
+    Actions:
+        - RequestResolver
+        - Loader
+        - Persister

@@ -1,0 +1,73 @@
+default:
+    suites:
+        default:
+            contexts:
+                - FeatureContext
+                - DoctrineContext:
+                    doctrine: '@doctrine'
+                    kernel: '@kernel'
+                    encoderFactory: '@security.encoder_factory'
+                - MailContext:
+                    kernel: '@kernel'
+
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                bootstrap: features/bootstrap/bootstrap.php
+                class: App\Kernel
+        Behat\MinkExtension:
+                sessions:
+                    default:
+                        symfony2: ~
+
+coverage:
+    suites:
+        default:
+            contexts:
+                - FeatureContext
+                - DoctrineContext:
+                    doctrine: '@doctrine'
+                    kernel: '@kernel'
+                    encoderFactory: '@security.encoder_factory'
+                - MailContext:
+                    kernel: '@kernel'
+
+    extensions:
+        Behat\Symfony2Extension:
+            kernel:
+                bootstrap: features/bootstrap/bootstrap.php
+                class: App\Kernel
+        Behat\MinkExtension:
+                sessions:
+                    default:
+                        symfony2: ~
+        LeanPHP\Behat\CodeCoverage\Extension:
+          # select which driver to use when gatherig coverage data
+          drivers:
+            - local     # local Xdebug driver
+          # filter options
+          filter:
+            forceCoversAnnotation:                false
+            mapTestClassNameToCoveredClassName:   false
+            whitelist:
+              addUncoveredFilesFromWhitelist:     true
+              processUncoveredFilesFromWhitelist: false
+              include:
+                directories:
+                  'src': ~
+                  'tests':
+                    suffix: '.php'
+
+              exclude:
+                directories:
+                  'src/Entity': ~
+                  'src/Domain/DoctrineMigrations': ~
+                  'src/Domain/CreateAccountFromCLI': ~
+                files:
+                  - src/Kernel.php
+          # report configuration
+          report:
+            format:    html
+            options:
+              target: var/behat-coverage/html
+
