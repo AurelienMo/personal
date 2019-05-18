@@ -1,0 +1,19 @@
+<header>
+    <nav class="navbar navbar-dark elegant-color">
+        <button class="navbar-toggler first-button text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
+                aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon1"><span></span><span></span><span></span></div>
+        </button>
+        <a class="navbar-brand" href="{{ path('homepage') }}">
+            <img class="logo" alt="logo" src="{{ asset('build/images/logo.png') }}"/>
+        </a>
+        {% include 'parts/_language.html.twig' %}
+        <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item {% if app.request.attributes.get('_route') == 'homepage' %}active{% endif %}">
+                    <a class="nav-link" href="{{ path('homepage') }}">{{ 'link_pages.home'|trans }} {% if app.request.attributes.get('_route') == 'homepage' %}<span class="sr-only">(current)</span>{% endif %}</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

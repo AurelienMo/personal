@@ -1,0 +1,127 @@
+@mixin roboto() {
+  font-family: "Roboto", Arial, sans-serif;
+  font-weight: 600;
+}
+
+// $easing : opacity .8s cubic-bezier(1.215,.61,.355,1) .1s, transform .8s cubic-bezier(.215,.61,.355,1) .1s;
+
+@mixin headings {
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    @content;
+  }
+}
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    @each $key in $keys {
+      $map: map-get($map, $key);
+    }
+    @return $map;
+  }
+}
+
+@mixin loadfont($folder, $file, $name: $file, $w: normal, $s: normal) {
+  @font-face {
+    font-family: $name;
+    src: url('assets/fonts/' + $folder + '/' + $file + '.eot');
+    src: url('assets/fonts/' + $folder + '/' + $file + '.eot?#iefix') format('embedded-opentype'),
+    url('assets/fonts/' + $folder + '/' + $file + '.woff') format('woff'),
+    url('assets/fonts/' + $folder + '/' + $file + '.ttf') format('truetype'),
+    url('assets/fonts/' + $folder + '/' + $file + '.svg#' + $name) format('svg');
+    font-weight: $w;
+    font-style: $s;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@mixin text-shadow($shadow) {
+  -webkit-text-shadow: $shadow;
+  -moz-text-shadow: $shadow;
+  text-shadow: $shadow;
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity*100);
+}
+
+@mixin keyprefix($name){
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-o-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin prefix($property, $value...){
+  -webkit-#{$property}: #{$value};
+  -moz-#{$property}:  #{$value};
+  -ms-#{$property}:  #{$value};
+  -o-#{$property}:  #{$value};
+  #{$property}:  #{$value};
+}
+
+@mixin transition($args...) {
+  @include prefix('transition', $args);
+}
+
+@mixin border-box() {
+  @include prefix('box-sizing', border-box);
+}
+
+@mixin border-radius($radius: 10px) {
+  @include prefix('border-radius', $radius);
+}
+
+@mixin content-box() {
+  @include prefix('box-sizing', content-box);
+}
+
+@mixin transform-origin($param) {
+  @include prefix('transform-origin', $param);
+}
+
+@mixin transform($param) {
+  @include prefix('transform', $param);
+}
+
+@mixin animation($args...) {
+  @include prefix('animation', $args);
+}
+
+@mixin background-cover() {
+  @include prefix('background-size', cover);
+  background-repeat: no-repeat;
+
+  html.lt-ie9 & {
+    background-size: 100% auto;
+  }
+}
+
+@mixin box-shadow($left, $top, $blur, $spread, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow: inset $left $top $blur $spread $color;
+    -moz-box-shadow: inset $left $top $blur $spread $color;
+    box-shadow: inset $left $top $blur $spread $color;
+  } @else {
+    -webkit-box-shadow: $left $top $blur $spread $color;
+    -moz-box-shadow: $left $top $blur $spread $color;
+    box-shadow: $left $top $blur $spread $color;
+  }
+}
+
+// Mixin animation
+@mixin anim($elts: all, $vitesse: .3s, $ease: ease-in-out, $delay: 0s) {
+  -webkit-transition: $elts $vitesse $delay $ease;
+  -moz-transition: $elts $vitesse $delay $ease;
+  -ms-transition: $elts $vitesse $delay $ease;
+  -o-transition: $elts $vitesse $delay $ease;
+  transition: $elts $vitesse $delay $ease;
+}

@@ -1,3 +1,6 @@
 controllers:
     resource: ../../src/Actions/
     type: annotation
+    prefix: /{_locale}
+    requirements:
+        _locale: en|fr
