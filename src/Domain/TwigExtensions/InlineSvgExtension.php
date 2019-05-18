@@ -48,12 +48,12 @@ class InlineSvgExtension extends AbstractExtension
     {
         try {
             $xmlString = file_get_contents($this->webRootDir.$svgUri);
-            if(!$xmlString) {
+            if (!$xmlString) {
                 throw new \RuntimeException('SVG file not found : '.$svgUri);
             }
             $xml = new \SimpleXMLElement($xmlString);
             $dom = dom_import_simplexml($xml);
-            if(!$dom) {
+            if (!$dom) {
                 throw new \RuntimeException('Unable to parse svg dom : '.$svgUri);
             }
 
