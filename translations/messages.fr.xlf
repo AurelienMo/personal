@@ -6,6 +6,18 @@
                 <source>link_pages.home</source>
                 <target>Accueil</target>
             </trans-unit>
+            <trans-unit id="text.home.title">
+                <source>text.home.title</source>
+                <target>Développeur PHP / Symfony passionné</target>
+            </trans-unit>
+            <trans-unit id="text.home.description">
+                <source>text.home.description</source>
+                <target>
+                    Developpeur Symfony passionné qui jour après jour recherche et découvre de nouvelles solutions à implémenter.<![CDATA[<br/>]]>
+                    Une architecture logicielle, une nouvelle réflexion sur la façon de concevoir un applicatif...<![CDATA[<br/>]]><![CDATA[<br/>]]>
+                    Un besoin ? Une question ? N'hésitez plus contactez moi par le biais du formulaire de contact.
+                </target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

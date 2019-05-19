@@ -1,1 +1,42 @@
 {% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('build/home.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="container-fluid presentation mt-5 pt-5 pl-5 pr-5">
+    <section class="row text-center">
+        <div class="col-12 mt-4 mb-2">
+            <img id="avatar" class="rounded-circle" alt="avatar" src="{{ asset('build/images/person/avatar.png') }}"/>
+        </div>
+        <div class="col-12 mt-2 mb-4">
+            <h3 class="text-uppercase font-weight-bold">Aurelien Morvan</h3>
+            <h4>
+                {{ 'text.home.title'|trans }}
+            </h4>
+            <p>
+                {{ 'text.home.description'|trans|raw }}
+            </p>
+            <div class="d-flex justify-content-center pt-3">
+                <a href="https://github.com/AurelienMo" target="_blank">
+                    <i class="fab fa-2x fa-github p-3"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/aurelien-morvan-48158386/" target="_blank">
+                    <i class="fab fa-2x fa-linkedin-in p-3"></i>
+                </a>
+                <a href="https://twitter.com/aurelienm13" target="_blank">
+                    <i class="fab fa-2x fa-twitter p-3"></i>
+                </a>
+                <a href="https://www.facebook.com/aurelien.morvan.5" target="_blank">
+                    <i class="fab fa-2x fa-facebook-f p-3"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('build/home.js') }}"></script>
+{% endblock %}

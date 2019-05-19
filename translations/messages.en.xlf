@@ -6,6 +6,18 @@
                 <source>link_pages.home</source>
                 <target>Home</target>
             </trans-unit>
+            <trans-unit id="0">
+                <source>text.home.title</source>
+                <target>Passionate Developer PHP / Symfony</target>
+            </trans-unit>
+            <trans-unit id="text.home.description">
+                <source>text.home.description</source>
+                <target>
+                    Passionate Symfony developer who day after day researches and discovers new solutions to implement<![CDATA[<br/>]]>
+                    A software architecture, a new reflection on how to design an application...<![CDATA[<br/>]]><![CDATA[<br/>]]>
+                    A need ? A question ? Do not hesitate to contact me via the contact form.
+                </target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
