@@ -18,6 +18,34 @@
                     Un besoin ? Une question ? N'hésitez plus contactez moi par le biais du formulaire de contact.
                 </target>
             </trans-unit>
+            <trans-unit id="form.contact.firstname">
+                <source>form.contact.firstname</source>
+                <target>Prénom</target>
+            </trans-unit>
+            <trans-unit id="form.contact.lastname">
+                <source>form.contact.lastname</source>
+                <target>Nom</target>
+            </trans-unit>
+            <trans-unit id="form.contact.email">
+                <source>form.contact.email</source>
+                <target>Adresse email</target>
+            </trans-unit>
+            <trans-unit id="form.contact.subject">
+                <source>form.contact.subject</source>
+                <target>Sujet</target>
+            </trans-unit>
+            <trans-unit id="form.contact.message">
+                <source>form.contact.message</source>
+                <target>Votre message</target>
+            </trans-unit>
+            <trans-unit id="form.contact.title">
+                <source>form.contact.title</source>
+                <target>Contactez moi</target>
+            </trans-unit>
+            <trans-unit id="form.btn.submit">
+                <source>form.btn.submit</source>
+                <target>Envoyer</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

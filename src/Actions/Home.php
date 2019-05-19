@@ -13,7 +13,12 @@ declare(strict_types=1);
 
 namespace App\Actions;
 
+use App\Domain\FormContact\ContactFormType;
+use App\Domain\FormContact\FormHandler;
+use App\Responders\RedirectResponder;
 use App\Responders\ViewResponder;
+use Symfony\Component\Form\FormFactoryInterface;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Error\LoaderError;
@@ -27,8 +32,31 @@ use Twig\Error\SyntaxError;
  */
 class Home
 {
+    /** @var FormFactoryInterface */
+    protected $formFactory;
+
+    /** @var FormHandler */
+    protected $formHandler;
+
     /**
-     * @param ViewResponder $responder
+     * Home constructor.
+     *
+     * @param FormFactoryInterface $formFactory
+     * @param FormHandler          $formHandler
+     */
+    public function __construct(
+        FormFactoryInterface $formFactory,
+        FormHandler $formHandler
+    ) {
+        $this->formFactory = $formFactory;
+        $this->formHandler = $formHandler;
+    }
+
+    /**
+     * @param Request           $request
+     * @param ViewResponder     $viewResponder
+     *
+     * @param RedirectResponder $redirectResponder
      *
      * @return Response
      *
@@ -36,10 +64,20 @@ class Home
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function __invoke(ViewResponder $responder)
+    public function __invoke(Request $request, ViewResponder $viewResponder, RedirectResponder $redirectResponder)
     {
-        return $responder(
-            'core/home.html.twig'
+        $form = $this->formFactory->create(ContactFormType::class)
+                                  ->handleRequest($request);
+
+        if ($this->formHandler->handle($form)) {
+            return $redirectResponder('homepage');
+        }
+
+        return $viewResponder(
+            'core/home.html.twig',
+            [
+                'form' => $form->createView(),
+            ]
         );
     }
 }

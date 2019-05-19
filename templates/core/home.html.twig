@@ -35,6 +35,20 @@
         </div>
     </section>
 </div>
+<div class="container contact">
+    <section class="mb-4">
+        <h2 class="h1-responsive font-weight-bold text-center my-4">{{ 'form.contact.title'|trans }}</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6 mb-md-0 mb-5">
+                {% form_theme form 'forms/_contact.html.twig' %}
+                {{ form(form) }}
+            </div>
+
+        </div>
+
+    </section>
+    <!--Section: Contact v.2-->
+</div>
 {% endblock %}
 
 {% block javascripts %}

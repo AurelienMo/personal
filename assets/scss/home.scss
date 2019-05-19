@@ -1,3 +1,7 @@
+@import 'vars/vars';
+@import "vars/custom-variables";
+@import "parts/header";
+
 .presentation {
   height: calc(100vh);
   background-color: #ECF0F1;
@@ -6,5 +10,16 @@
   }
   a {
     color: #212528;
+  }
+}
+
+button.btn {
+  @include roundBtn();
+  background-color: $elegantColor;
+  color: #fff;
+  &:hover {
+    background-color: transparent;
+    color: $elegantColor;
+    border: 1px solid $elegantColor;
   }
 }
