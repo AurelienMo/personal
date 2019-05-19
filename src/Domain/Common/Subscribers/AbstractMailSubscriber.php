@@ -41,6 +41,10 @@ class AbstractMailSubscriber implements EventSubscriberInterface
         $this->mailHelper = $mailHelper;
     }
 
+    /**
+     * @codeCoverageIgnore
+     * @return array
+     */
     public static function getSubscribedEvents()
     {
         return [];

@@ -7,6 +7,6 @@
 
 {#<a{% if app.request.attributes.get('_locale') == "fr" %} class="current"{% endif %} href="{{ path(route, paramsFr) }}">FR</a>#}
 {#<a{% if app.request.attributes.get('_locale') == "en" %} class="current"{% endif %}  href="{{ path(route, paramsEn) }}">EN</a>#}
-<a href="{{ path(route, params) }}">
+<a id="switch-language" href="{{ path(route, params) }}">
     <img class="flag" alt="flag_{{ text }}" src="{{ asset('build/images/'~text~'_flag.png') }}"/>
 </a>

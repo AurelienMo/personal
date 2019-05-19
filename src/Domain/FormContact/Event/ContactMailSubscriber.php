@@ -20,6 +20,10 @@ use App\Domain\Common\Subscribers\AbstractMailSubscriber;
  */
 class ContactMailSubscriber extends AbstractMailSubscriber
 {
+    /**
+     * @codeCoverageIgnore
+     * @return array
+     */
     public static function getSubscribedEvents()
     {
         return [

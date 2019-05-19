@@ -55,8 +55,6 @@ coverage:
               include:
                 directories:
                   'src': ~
-                  'tests':
-                    suffix: '.php'
 
               exclude:
                 directories:

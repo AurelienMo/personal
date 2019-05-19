@@ -20,7 +20,7 @@
             </trans-unit>
             <trans-unit id="subject.required">
                 <source>subject.required</source>
-                <target>Le sujet est requis</target>
+                <target>Le sujet est requis.</target>
             </trans-unit>
             <trans-unit id="message.required">
                 <source>message.required</source>
