@@ -1,12 +1,11 @@
 {% set route = app.request.attributes.get('_route') %}
 {% set currentLanguage = app.request.attributes.get('_locale') %}
-{% set paramsFr = app.request.attributes.get('_route_params')|merge({'_locale': 'fr'}) %}
-{% set paramsEn = app.request.attributes.get('_route_params')|merge({'_locale': 'en'}) %}
+{% set paramsFr = app.request.attributes.get('_route_params') != null ? app.request.attributes.get('_route_params')|merge({'_locale': 'fr'}) : null %}
+{% set paramsEn = app.request.attributes.get('_route_params') != null ? app.request.attributes.get('_route_params')|merge({'_locale': 'en'}) : null %}
 {% set params = currentLanguage == 'fr' ? paramsEn : paramsFr %}
 {% set text = currentLanguage == 'fr' ? 'en' : 'fr' %}
 
-{#<a{% if app.request.attributes.get('_locale') == "fr" %} class="current"{% endif %} href="{{ path(route, paramsFr) }}">FR</a>#}
-{#<a{% if app.request.attributes.get('_locale') == "en" %} class="current"{% endif %}  href="{{ path(route, paramsEn) }}">EN</a>#}
-<a id="switch-language" href="{{ path(route, params) }}">
+<a id="switch-language" href="{% if route != '' %}{{ path(route, params) }}{% else %}{{ path('homepage') }}{% endif %}">
     <img class="flag" alt="flag_{{ text }}" src="{{ asset('build/images/'~text~'_flag.png') }}"/>
 </a>
+
