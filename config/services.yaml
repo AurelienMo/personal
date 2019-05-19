@@ -15,7 +15,7 @@ services:
             $webRootDir: '%kernel.project_dir%/public'
             $paramsMailApp:
                 name: 'Aurelien Morvan'
-                email: 'morvan.aurelien@gmail.com'
+                email: 'contact@morvan.tech'
 
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
