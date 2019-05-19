@@ -50,6 +50,18 @@
                 <source>flash.contact.success</source>
                 <target>Merci pour votre contact. Je vous répondrais dans les plus brefs délais.</target>
             </trans-unit>
+            <trans-unit id="page_not_found">
+                <source>page_not_found</source>
+                <target>La page demandée n'existe pas.</target>
+            </trans-unit>
+            <trans-unit id="page_request_not_found">
+                <source>page_request_not_found</source>
+                <target>La requête pour la page demandée n'a pu être localisé. Merci de vérifier l'url de celle-ci.</target>
+            </trans-unit>
+            <trans-unit id="back">
+                <source>back</source>
+                <target>Retour</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

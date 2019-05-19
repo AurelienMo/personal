@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container mt-5 pt-5 pl-5 pr-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h1 class="h1.responsive">{{ 'page_not_found'|trans }}</h1>
+                <p>
+                    {{ 'page_request_not_found'|trans }} <a href="{{ path('homepage') }}">{{ 'back'|trans }}</a>
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
