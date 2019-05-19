@@ -50,6 +50,18 @@
                 <source>flash.contact.success</source>
                 <target>Thank you for your contact. I will respond to you as quickly as possible.</target>
             </trans-unit>
+            <trans-unit id="page_not_found">
+                <source>page_not_found</source>
+                <target>Page not found</target>
+            </trans-unit>
+            <trans-unit id="page_request_not_found">
+                <source>page_request_not_found</source>
+                <target>The requested page couldn't be located. Checkout for any URL misspelling.</target>
+            </trans-unit>
+            <trans-unit id="back">
+                <source>back</source>
+                <target>Return</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
