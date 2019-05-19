@@ -46,6 +46,10 @@
                 <source>form.btn.submit</source>
                 <target>Send</target>
             </trans-unit>
+            <trans-unit id="flash.contact.success">
+                <source>flash.contact.success</source>
+                <target>Thank you for your contact. I will respond to you as quickly as possible.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

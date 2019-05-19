@@ -13,6 +13,7 @@ declare(strict_types=1);
 
 namespace App\Domain\FormContact;
 
+use App\Domain\Common\Events\FlashMessageEvent;
 use App\Domain\FormContact\Event\ContactMailEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\Form\FormInterface;
@@ -43,6 +44,13 @@ class FormHandler
             $this->eventDispatcher->dispatch(
                 ContactMailEvent::MAIL_CONTACT_EVENT,
                 new ContactMailEvent($data)
+            );
+            $this->eventDispatcher->dispatch(
+                FlashMessageEvent::FLASH_MESSAGE,
+                new FlashMessageEvent(
+                    'success',
+                    'flash.contact.success'
+                )
             );
 
             return true;

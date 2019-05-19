@@ -32,4 +32,5 @@ Feature: As a user I need to be access home page & send contact form
     And I press "Envoyer"
     Then I should be on "/fr/"
     And a mail should have been sent to "contact@morvan.tech" with subject "Demande information"
+    And I should see "Merci pour votre contact. Je vous répondrais dans les plus brefs délais."
 
