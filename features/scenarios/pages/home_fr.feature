@@ -31,5 +31,5 @@ Feature: As a user I need to be access home page & send contact form
     And I fill in "Votre message" with "Test contenu de message"
     And I press "Envoyer"
     Then I should be on "/fr/"
-    And a mail should have been sent to "morvan.aurelien@gmail.com" with subject "Demande information"
+    And a mail should have been sent to "contact@morvan.tech" with subject "Demande information"
 
