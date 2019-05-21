@@ -1,0 +1,50 @@
+easy_admin:
+    entities:
+        Menu:
+            class: App\Entity\Menu
+            label: 'admin.entities.menu.label'
+            list:
+                title: "admin.entities.menu.title"
+                fields:
+                    - property: order
+                      label: admin.entities.menu.order.label
+                      type: integer
+                    - property: name
+                      label: admin.entities.menu.name.label
+                      type: string
+                    - property: routeName
+                      label: admin.entities.menu.routeName.label
+                      type: string
+                    - property: enabled
+                      label: admin.entities.menu.enabled.label
+                      type: toggle
+                sortable: ['order', 'ASC']
+            new:
+                fields:
+                    - property: order
+                      label: admin.entities.menu.order.label
+                      type: integer
+                    - property: name
+                      label: admin.entities.menu.name.label
+                      type: text
+                    - property: routeName
+                      label: admin.entities.menu.routeName.label
+                      type: text
+                    - property: enabled
+                      label: admin.entities.menu.enabled.label
+                      type: checkbox
+            edit:
+                title: 'admin.entities.menu.form.edit.label'
+                fields:
+                    -   property: order
+                        label: admin.entities.menu.order.label
+                        type: integer
+                    -   property: name
+                        label: admin.entities.menu.name.label
+                        type: text
+                    -   property: routeName
+                        label: admin.entities.menu.routeName.label
+                        type: text
+                    -   property: enabled
+                        label: admin.entities.menu.enabled.label
+                        type: checkbox

@@ -1,0 +1,11 @@
+@import 'vars/vars';
+@import "vars/custom-variables";
+
+.logo {
+  img {
+    max-height: 50px;
+  }
+}
+.flag {
+  max-height: 30px;
+}
