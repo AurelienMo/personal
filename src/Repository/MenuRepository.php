@@ -15,13 +15,12 @@ namespace App\Repository;
 
 use App\Entity\AbstractEntity;
 use App\Entity\Menu;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
 /**
  * Class MenuRepository
  */
-class MenuRepository extends ServiceEntityRepository
+class MenuRepository extends AbstractRepository
 {
     public function __construct(
         ManagerRegistry $registry
@@ -32,18 +31,24 @@ class MenuRepository extends ServiceEntityRepository
         );
     }
 
-    public function remove(AbstractEntity $entity)
+    /**
+     * @param array $filters
+     *
+     * @return array
+     */
+    public function getMenusByFilter(array $filters = [])
     {
-        $this->_em->remove($entity);
-        $this->save();
-    }
+        $qb = $this->createQueryBuilder('m')
+                   ->where('m.enabled = true')
+                   ->orderBy('m.order', 'ASC');
 
-    public function save(AbstractEntity $entity = null)
-    {
-        if (!\is_null($entity)) {
-            $this->_em->persist($entity);
+        if (!empty($filters)) {
+            foreach ($filters as $property => $value) {
+                $qb->andWhere(sprintf('m.%s = %s', $property, $value))
+                    ->setParameter($property, $value);
+            }
         }
 
-        $this->_em->flush();
+        return $qb->getQuery()->getResult();
     }
 }

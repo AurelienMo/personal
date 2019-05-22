@@ -12,5 +12,7 @@
     <rule ref="PSR1"/>
 
     <file>src/</file>
+    <exclude-pattern>*/src/DoctrineMigrations/*</exclude-pattern>
+    <exclude-pattern>*/src/DataFixtures/*</exclude-pattern>
 
 </ruleset>

@@ -128,7 +128,7 @@ db-diff: src/Entity
 	$(SYMFONY) doctrine:migrations:diff
 
 db-migr: ## Execute migration
-db-migr: src/Domain/DoctrineMigrations
+db-migr: src/DoctrineMigrations
 	$(SYMFONY) doctrine:migrations:migrate -n
 
 db-down: ## Down migration
