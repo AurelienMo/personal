@@ -1,4 +1,6 @@
-easy_admin_bundle:
-    resource: '@EasyAdminBundle/Controller/EasyAdminController.php'
-    prefix: /admin
+easy_admin_bundle_menu:
+    resource: ../../src/EasyAdmin/
     type: annotation
+    prefix: /{_locale}/morvanadmin
+    requirements:
+        _locale: en|fr
