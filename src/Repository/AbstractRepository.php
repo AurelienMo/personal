@@ -15,18 +15,33 @@ namespace App\Repository;
 
 use App\Entity\AbstractEntity;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\OptimisticLockException;
+use Doctrine\ORM\ORMException;
 
 /**
  * Class AbstractRepository
+ *
+ * @codeCoverageIgnore
  */
 abstract class AbstractRepository extends ServiceEntityRepository
 {
+    /**
+     * @param AbstractEntity $entity
+     *
+     * @throws ORMException
+     */
     public function remove(AbstractEntity $entity)
     {
         $this->_em->remove($entity);
         $this->save();
     }
 
+    /**
+     * @param AbstractEntity|null $entity
+     *
+     * @throws ORMException
+     * @throws OptimisticLockException
+     */
     public function save(AbstractEntity $entity = null)
     {
         if (!\is_null($entity)) {

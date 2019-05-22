@@ -59,7 +59,7 @@ coverage:
               exclude:
                 directories:
                   'src/Entity': ~
-                  'src/Domain/DoctrineMigrations': ~
+                  'src/DoctrineMigrations': ~
                   'src/Domain/CreateAccountFromCLI': ~
                 files:
                   - src/Kernel.php

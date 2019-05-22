@@ -13,7 +13,6 @@ declare(strict_types=1);
 
 namespace App\Repository;
 
-use App\Entity\AbstractEntity;
 use App\Entity\Menu;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
@@ -32,22 +31,13 @@ class MenuRepository extends AbstractRepository
     }
 
     /**
-     * @param array $filters
-     *
      * @return array
      */
-    public function getMenusByFilter(array $filters = [])
+    public function getMenusByFilter()
     {
         $qb = $this->createQueryBuilder('m')
                    ->where('m.enabled = true')
                    ->orderBy('m.order', 'ASC');
-
-        if (!empty($filters)) {
-            foreach ($filters as $property => $value) {
-                $qb->andWhere(sprintf('m.%s = %s', $property, $value))
-                    ->setParameter($property, $value);
-            }
-        }
 
         return $qb->getQuery()->getResult();
     }

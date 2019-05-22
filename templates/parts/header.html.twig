@@ -10,14 +10,7 @@
         {% include 'parts/_language.html.twig' %}
         <div class="collapse navbar-collapse" id="navbarSupportedContent22">
             <ul class="navbar-nav mr-auto">
-                {% for menu in menus %}
-                    <li class="nav-item {% if app.request.attributes.get('_route') == menu.routeName %}active{% endif %}">
-                        <a class="nav-link" href="{{ path(menu.routeName) }}">{{ menu.name|trans }} {% if app.request.attributes.get('_route') == menu.routeName %}<span class="sr-only">(current)</span>{% endif %}</a>
-                    </li>
-                {% endfor %}
-{#                <li class="nav-item {% if app.request.attributes.get('_route') == 'homepage' %}active{% endif %}">#}
-{#                    <a class="nav-link" href="{{ path('homepage') }}">{{ 'link_pages.home'|trans }} {% if app.request.attributes.get('_route') == 'homepage' %}<span class="sr-only">(current)</span>{% endif %}</a>#}
-{#                </li>#}
+                {{ render_esi(url('menu')) }}
             </ul>
         </div>
     </nav>

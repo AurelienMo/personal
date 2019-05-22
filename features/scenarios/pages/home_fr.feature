@@ -6,6 +6,7 @@ Feature: As a user I need to be access home page & send contact form
   Scenario: [Success] Success Access homepage
     When I go to "/fr"
     Then the response status code should be 200
+    And I should see 0 "nav-item" element
 
   Scenario: [Success] Success switch lang
     When I go to "/fr"

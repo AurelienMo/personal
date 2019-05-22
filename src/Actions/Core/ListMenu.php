@@ -58,7 +58,7 @@ class ListMenu
         $menus = $this->menuRepository->getMenusByFilter();
 
         return $responder(
-            'parts/header.html.twig',
+            'parts/menu.html.twig',
             [
                 'menus' => $menus,
             ]
