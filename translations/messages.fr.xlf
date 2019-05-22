@@ -98,6 +98,10 @@
                 <source>admin.entities.menu.form.edit.label</source>
                 <target>Mise à jour</target>
             </trans-unit>
+            <trans-unit id="Accueil">
+                <source>Accueil</source>
+                <target>Accueil</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
