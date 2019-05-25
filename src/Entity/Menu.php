@@ -48,6 +48,13 @@ class Menu extends AbstractEntity
     protected $enabled;
 
     /**
+     * @var string|null
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $icon;
+
+    /**
      * @return string|null
      */
     public function getRouteName(): ?string
@@ -93,5 +100,21 @@ class Menu extends AbstractEntity
     public function setEnabled(bool $enabled): void
     {
         $this->enabled = $enabled;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getIcon(): ?string
+    {
+        return $this->icon;
+    }
+
+    /**
+     * @param string|null $icon
+     */
+    public function setIcon(?string $icon): void
+    {
+        $this->icon = $icon;
     }
 }

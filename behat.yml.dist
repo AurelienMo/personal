@@ -61,6 +61,7 @@ coverage:
                   'src/Entity': ~
                   'src/DoctrineMigrations': ~
                   'src/Domain/CreateAccountFromCLI': ~
+                  'src/EasyAdmin': ~
                 files:
                   - src/Kernel.php
           # report configuration

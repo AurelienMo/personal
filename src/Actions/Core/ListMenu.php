@@ -16,6 +16,7 @@ namespace App\Actions\Core;
 use App\Repository\MenuRepository;
 use App\Responders\ViewResponder;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Twig\Error\LoaderError;
@@ -32,15 +33,21 @@ class ListMenu
     /** @var MenuRepository */
     protected $menuRepository;
 
+    /** @var RequestStack */
+    protected $requestStack;
+
     /**
      * ListMenu constructor.
      *
      * @param MenuRepository $menuRepository
+     * @param RequestStack   $requestStack
      */
     public function __construct(
-        MenuRepository $menuRepository
+        MenuRepository $menuRepository,
+        RequestStack $requestStack
     ) {
         $this->menuRepository = $menuRepository;
+        $this->requestStack = $requestStack;
     }
 
     /**
@@ -61,6 +68,7 @@ class ListMenu
             'parts/menu.html.twig',
             [
                 'menus' => $menus,
+                'reqStack' => $this->requestStack->getMasterRequest(),
             ]
         );
     }

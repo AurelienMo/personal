@@ -152,6 +152,9 @@
     "fig/link-util": {
         "version": "1.0.0"
     },
+    "fzaninotto/faker": {
+        "version": "v1.8.0"
+    },
     "guzzlehttp/guzzle": {
         "version": "6.3.3"
     },
@@ -172,6 +175,22 @@
     },
     "monolog/monolog": {
         "version": "1.24.0"
+    },
+    "myclabs/deep-copy": {
+        "version": "1.9.1"
+    },
+    "nelmio/alice": {
+        "version": "3.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.2",
+            "ref": "0b9900ece737bec7752e4155c0164639dd9b0cb0"
+        },
+        "files": [
+            "config/packages/dev/nelmio_alice.yaml",
+            "config/packages/test/nelmio_alice.yaml"
+        ]
     },
     "nette/bootstrap": {
         "version": "v3.0.0"
@@ -278,8 +297,20 @@
     "sebastian/code-unit-reverse-lookup": {
         "version": "1.0.1"
     },
+    "sebastian/comparator": {
+        "version": "3.0.2"
+    },
+    "sebastian/diff": {
+        "version": "3.0.2"
+    },
     "sebastian/environment": {
         "version": "4.2.2"
+    },
+    "sebastian/exporter": {
+        "version": "3.1.0"
+    },
+    "sebastian/recursion-context": {
+        "version": "3.0.0"
     },
     "sebastian/version": {
         "version": "2.0.1"

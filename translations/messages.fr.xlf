@@ -102,6 +102,34 @@
                 <source>Accueil</source>
                 <target>Accueil</target>
             </trans-unit>
+            <trans-unit id="form.login.username">
+                <source>form.login.username</source>
+                <target>Identifiant</target>
+            </trans-unit>
+            <trans-unit id="form.login.password">
+                <source>form.login.password</source>
+                <target>Mot de passe</target>
+            </trans-unit>
+            <trans-unit id="form.btn.login">
+                <source>form.btn.login</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="error.invalid_identifier">
+                <source>error.invalid_identifier</source>
+                <target>Identifiants invalides.</target>
+            </trans-unit>
+            <trans-unit id="error.user_must_be_connected">
+                <source>error.user_must_be_connected</source>
+                <target>Vous devez être connecté.</target>
+            </trans-unit>
+            <trans-unit id="menu.login">
+                <source>menu.login</source>
+                <target>Se connecter</target>
+            </trans-unit>
+            <trans-unit id="menu.logout">
+                <source>menu.logout</source>
+                <target>Se déconnecter</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

@@ -102,6 +102,34 @@
                 <source>Accueil</source>
                 <target>Home</target>
             </trans-unit>
+            <trans-unit id="form.login.username">
+                <source>form.login.username</source>
+                <target>Identifier</target>
+            </trans-unit>
+            <trans-unit id="form.login.password">
+                <source>form.login.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="form.btn.login">
+                <source>form.btn.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="error.invalid_identifier">
+                <source>error.invalid_identifier</source>
+                <target>Bad credentials.</target>
+            </trans-unit>
+            <trans-unit id="error.user_must_be_connected">
+                <source>error.user_must_be_connected</source>
+                <target>You must be connected.</target>
+            </trans-unit>
+            <trans-unit id="menu.login">
+                <source>menu.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="menu.logout">
+                <source>menu.logout</source>
+                <target>Logout</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
