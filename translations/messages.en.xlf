@@ -130,6 +130,10 @@
                 <source>menu.logout</source>
                 <target>Logout</target>
             </trans-unit>
+            <trans-unit id="menu.admin">
+                <source>menu.admin</source>
+                <target>Admin</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

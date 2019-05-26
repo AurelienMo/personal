@@ -15,7 +15,7 @@ security:
             anonymous: true
             provider: user_provider
             logout:
-                target: /login
+                target: /
             guard:
                 authenticators:
                     - App\Domain\User\Authentication\LoginFormAuthenticator

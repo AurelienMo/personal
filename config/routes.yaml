@@ -4,3 +4,7 @@ root:
         _controller: FrameworkBundle:Redirect:urlRedirect
         path: '/fr'
         permanent: true
+
+app_logout:
+    path: /logout
+    methods: GET

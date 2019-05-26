@@ -1,5 +1,7 @@
 easy_admin:
     site_name: 'Administration'
+    user:
+        display_name: true
     design:
         brand_color: '#2D2D2D'
         assets:

@@ -80,7 +80,7 @@ class User extends AbstractEntity implements UserInterface
      */
     public function __construct()
     {
-        $this->roles[] = UserStatus::LIST_ROLES['admin'];
+        $this->roles[] = UserStatus::LIST_ROLES['user'];
         $this->status = UserStatus::STATUS_PENDING_ACTIVATION;
         parent::__construct();
     }
@@ -198,5 +198,10 @@ class User extends AbstractEntity implements UserInterface
     public function eraseCredentials()
     {
         return;
+    }
+
+    public function __toString()
+    {
+        return sprintf('%s %s', $this->firstname, $this->lastname);
     }
 }
