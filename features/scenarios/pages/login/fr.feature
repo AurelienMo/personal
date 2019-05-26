@@ -33,3 +33,21 @@ Feature: I need to be able to access login page
     And I fill in "Mot de passe" with "12345678"
     And I press "Se connecter"
     Then I should be on "/fr/"
+
+  Scenario: [Fail] Try to login with account locked
+    Given I load following file "login/user.yml"
+    When I am on "/fr/login"
+    And I fill in "Identifiant" with "janedoe"
+    And I fill in "Mot de passe" with "12345678"
+    And I press "Se connecter"
+    Then I should be on "/fr/login"
+    And I should see "Votre compte est bloqué. Merci de contacter les administrateurs."
+
+  Scenario: [Fail] Try to login with account not activated
+    Given I load following file "login/user.yml"
+    When I am on "/fr/login"
+    And I fill in "Identifiant" with "foobar"
+    And I fill in "Mot de passe" with "12345678"
+    And I press "Se connecter"
+    Then I should be on "/fr/login"
+    And I should see "Votre compte n'est pas activé. Merci de vérifier vos mails ou d'effectuer une demande de mot de passe oublié."

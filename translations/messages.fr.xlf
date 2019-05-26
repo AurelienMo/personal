@@ -134,6 +134,14 @@
                 <source>menu.admin</source>
                 <target>Admin</target>
             </trans-unit>
+            <trans-unit id="error.pending_activation">
+                <source>error.pending_activation</source>
+                <target>Votre compte n'est pas activé. Merci de vérifier vos mails ou d'effectuer une demande de mot de passe oublié.</target>
+            </trans-unit>
+            <trans-unit id="error.locked">
+                <source>error.locked</source>
+                <target>Votre compte est bloqué. Merci de contacter les administrateurs.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

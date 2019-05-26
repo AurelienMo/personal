@@ -13,6 +13,8 @@ declare(strict_types=1);
 
 namespace App\Domain\User\Authentication;
 
+use App\Entity\User;
+use App\Entity\UserStatus;
 use App\Repository\UserRepository;
 use Doctrine\ORM\NonUniqueResultException;
 use Symfony\Component\Form\FormFactoryInterface;
@@ -104,12 +106,28 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
      */
     public function getUser($credentials, UserProviderInterface $userProvider)
     {
+        /** @var User|null $user */
         $user = !\is_null($credentials->getUsername()) ?
             $this->userRepository->loadUserByUsername($credentials->getUsername()) :
             null;
 
         if (\is_null($user)) {
             throw new CustomUserMessageAuthenticationException('error.invalid_identifier');
+        }
+
+        $statusMessage = null;
+
+        switch ($user->getStatus()) {
+            case UserStatus::STATUS_PENDING_ACTIVATION:
+                $statusMessage = 'error.pending_activation';
+                break;
+            case UserStatus::STATUS_LOCK:
+                $statusMessage = 'error.locked';
+                break;
+        }
+
+        if (!is_null($statusMessage)) {
+            throw new CustomUserMessageAuthenticationException($statusMessage);
         }
 
         return $user;
