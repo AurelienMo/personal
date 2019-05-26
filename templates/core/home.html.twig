@@ -6,6 +6,7 @@
 
 {% block body %}
 <div class="container-fluid presentation mt-5 pt-5 pl-5 pr-5">
+    {% include 'parts/_flash_messages.html.twig' %}
     <section class="row text-center">
         <div class="col-12 mt-4 mb-2">
             <img id="avatar" class="rounded-circle" alt="avatar" src="{{ asset('build/images/person/avatar.png') }}"/>
@@ -40,7 +41,6 @@
         <h2 class="h1-responsive font-weight-bold text-center my-4">{{ 'form.contact.title'|trans }}</h2>
         <div class="row justify-content-center">
             <div class="col-md-6 mb-md-0 mb-5">
-                {% include 'parts/_flash_messages.html.twig' %}
                 {% form_theme form 'forms/_contact.html.twig' %}
                 {{ form(form) }}
             </div>

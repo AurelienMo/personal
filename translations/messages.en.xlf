@@ -62,6 +62,78 @@
                 <source>back</source>
                 <target>Return</target>
             </trans-unit>
+            <trans-unit id="Menu">
+                <source>Menu</source>
+                <target>Menu</target>
+            </trans-unit>
+            <trans-unit id="admin.entities.menu.label">
+                <source>admin.entities.menu.label</source>
+                <target>Menu</target>
+            </trans-unit>
+            <trans-unit id="admin.entities.menu.title">
+                <source>admin.entities.menu.title</source>
+                <target>Menu's list</target>
+            </trans-unit>
+            <trans-unit id="admin.entities.menu.order.label">
+                <source>admin.entities.menu.order.label</source>
+                <target>Display order</target>
+            </trans-unit>
+            <trans-unit id="admin.entities.menu.name.label">
+                <source>admin.entities.menu.name.label</source>
+                <target>Menu's name</target>
+            </trans-unit>
+            <trans-unit id="admin.entities.menu.routeName.label">
+                <source>admin.entities.menu.routeName.label</source>
+                <target>Route's name</target>
+            </trans-unit>
+            <trans-unit id="admin.entities.menu.enabled.label">
+                <source>admin.entities.menu.enabled.label</source>
+                <target>Enabled menu</target>
+            </trans-unit>
+            <trans-unit id="admin.menu.configuration">
+                <source>admin.menu.configuration</source>
+                <target>Configuration</target>
+            </trans-unit>
+            <trans-unit id="admin.entities.menu.form.edit.label">
+                <source>admin.entities.menu.form.edit.label</source>
+                <target>Update</target>
+            </trans-unit>
+            <trans-unit id="Accueil">
+                <source>Accueil</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="form.login.username">
+                <source>form.login.username</source>
+                <target>Identifier</target>
+            </trans-unit>
+            <trans-unit id="form.login.password">
+                <source>form.login.password</source>
+                <target>Password</target>
+            </trans-unit>
+            <trans-unit id="form.btn.login">
+                <source>form.btn.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="error.invalid_identifier">
+                <source>error.invalid_identifier</source>
+                <target>Bad credentials.</target>
+            </trans-unit>
+            <trans-unit id="error.user_must_be_connected">
+                <source>error.user_must_be_connected</source>
+                <target>You must be connected.</target>
+            </trans-unit>
+            <trans-unit id="menu.login">
+                <source>menu.login</source>
+                <target>Login</target>
+            </trans-unit>
+            <trans-unit id="menu.logout">
+                <source>menu.logout</source>
+                <target>Logout</target>
+            </trans-unit>
+            <trans-unit id="menu.admin">
+                <source>menu.admin</source>
+                <target>Admin</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

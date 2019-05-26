@@ -1,0 +1,21 @@
+{% extends 'forms/_layout.html.twig' %}
+
+{% block form %}
+    {{ form_start(form) }}
+        <div class="row">
+            <div class="col-12">
+                <div class="md-form">
+                    {{ form_label(form.username) }}
+                    {{ form_widget(form.username) }}
+                </div>
+                <div class="md-form">
+                    {{ form_label(form.password) }}
+                    {{ form_widget(form.password) }}
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-md-center">
+            <button type="submit" class="btn btn-rounded">{{ 'form.btn.login'|trans }}</button>
+        </div>
+    {{ form_end(form) }}
+{% endblock %}

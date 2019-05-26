@@ -22,6 +22,7 @@ Encore
     .addEntry('babelpolyfill', '@babel/polyfill')
     .addEntry('entry', './assets/js/entry.js')
     .addEntry('home', './assets/js/home.js')
+    .addEntry('admin', './assets/js/admin.js')
 
     .copyFiles({
         from: './assets/images',

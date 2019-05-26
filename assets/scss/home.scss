@@ -12,14 +12,3 @@
     color: #212528;
   }
 }
-
-button.btn {
-  @include roundBtn();
-  background-color: $elegantColor;
-  color: #fff;
-  &:hover {
-    background-color: transparent;
-    color: $elegantColor;
-    border: 1px solid $elegantColor;
-  }
-}

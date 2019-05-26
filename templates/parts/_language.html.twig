@@ -4,7 +4,6 @@
 {% set paramsEn = app.request.attributes.get('_route_params') != null ? app.request.attributes.get('_route_params')|merge({'_locale': 'en'}) : null %}
 {% set params = currentLanguage == 'fr' ? paramsEn : paramsFr %}
 {% set text = currentLanguage == 'fr' ? 'en' : 'fr' %}
-
 <a id="switch-language" href="{% if route != '' %}{{ path(route, params) }}{% else %}{{ path('homepage') }}{% endif %}">
     <img class="flag" alt="flag_{{ text }}" src="{{ asset('build/images/'~text~'_flag.png') }}"/>
 </a>

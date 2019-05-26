@@ -1,0 +1,18 @@
+easy_admin:
+    site_name: 'Administration'
+    user:
+        display_name: true
+    design:
+        brand_color: '#2D2D2D'
+        assets:
+            css:
+                - 'build/logo.*.css'
+        menu:
+            - label: admin.menu.configuration
+              icon: cogs
+              children:
+                  - entity: Menu
+                    label: admin.entities.menu.label
+
+    list:
+        max_results: 15

@@ -1,0 +1,8 @@
+App\Entity\User:
+    user.johndoe:
+        firstname: 'John'
+        lastname: 'Doe'
+        email: 'johndoe@yopmail.com'
+        username: 'johndoe'
+        status: 'enabled'
+        password: "12345678"

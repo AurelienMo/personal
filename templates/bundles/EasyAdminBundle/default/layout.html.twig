@@ -1,0 +1,14 @@
+{% extends '@!EasyAdmin/default/layout.html.twig' %}
+
+{% block head_stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/admin.css') }}"
+{% endblock %}
+
+{% block header_logo %}
+    <a class="logo {{ easyadmin_config('site_name')|length > 14 ? 'logo-long' }}" title="{{ easyadmin_config('site_name')|striptags }}" href="{{ path('easyadmin') }}">
+        <img alt="logo" src="{{ asset('build/images/logo_dark.png') }}"/>
+    </a>
+    {% include 'parts/_language.html.twig' %}
+{% endblock header_logo %}
+

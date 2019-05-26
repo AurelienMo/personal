@@ -1,0 +1,8 @@
+{% for menu in menus %}
+    <li class="nav-item {% if reqStack.attributes.get('_route') == menu.routeName %}active{% endif %}">
+        <a class="nav-link" href="{{ path(menu.routeName) }}">
+            {% if menu.icon %}<i class="{{ menu.icon }}"></i>{% endif %}
+            {{ menu.name|trans }} {% if reqStack.attributes.get('_route') == menu.routeName %}<span class="sr-only">(current)</span>{% endif %}
+        </a>
+    </li>
+{% endfor %}

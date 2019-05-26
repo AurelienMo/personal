@@ -11,9 +11,11 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
+use App\Entity\User;
 use Behat\Behat\Context\Context;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\Tools\SchemaTool;
+use Nelmio\Alice\Loader\NativeLoader;
 use Symfony\Bridge\Doctrine\RegistryInterface;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -122,4 +124,26 @@ class DoctrineContext implements Context
             );
         }
     }
+
+    /**
+     * @Given I load following file :file
+     *
+     * @param string $file
+     */
+    public function iLoadFollowingFile(string $file)
+    {
+        $loader = new NativeLoader();
+        $objectSet = $loader->loadFile(__DIR__.'/../fixtures/'.$file);
+        foreach ($objectSet->getObjects() as $object) {
+            if ($object instanceof User) {
+                $object->setPassword(
+                    $this->encoderFactory->getEncoder(User::class)->encodePassword($object->getPassword(), '')
+                );
+            }
+            $this->getManager()->persist($object);
+        }
+
+        $this->getManager()->flush();
+    }
+
 }

@@ -1,7 +1,7 @@
  {% for key, arrayMessage in app.flashes %}
     {% for message in arrayMessage %}
         <div class="col-12 alert alert-{{ key }} alert-dismissible fade show text-center" role="alert">
-            {{ message }}
+            {{ message|trans }}
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>

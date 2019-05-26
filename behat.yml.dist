@@ -59,8 +59,9 @@ coverage:
               exclude:
                 directories:
                   'src/Entity': ~
-                  'src/Domain/DoctrineMigrations': ~
-                  'src/Domain/CreateAccountFromCLI': ~
+                  'src/DoctrineMigrations': ~
+                  'src/Domain/CreateUserFromCLI': ~
+                  'src/EasyAdmin': ~
                 files:
                   - src/Kernel.php
           # report configuration
