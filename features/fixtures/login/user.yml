@@ -1,0 +1,15 @@
+App\Entity\User:
+    user.janedoe:
+        firstname: 'Jane'
+        lastname: 'Doe'
+        email: 'janedoe@yopmail.com'
+        username: 'janedoe'
+        status: 'locked'
+        password: "12345678"
+    user.foobar:
+        firstname: 'Foo'
+        lastname: 'Bar'
+        email: 'foobar@yopmail.com'
+        username: 'foobar'
+        status: 'pending_activation'
+        password: "12345678"
