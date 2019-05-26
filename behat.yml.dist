@@ -60,7 +60,7 @@ coverage:
                 directories:
                   'src/Entity': ~
                   'src/DoctrineMigrations': ~
-                  'src/Domain/CreateAccountFromCLI': ~
+                  'src/Domain/CreateUserFromCLI': ~
                   'src/EasyAdmin': ~
                 files:
                   - src/Kernel.php
