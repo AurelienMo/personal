@@ -13,12 +13,10 @@ declare(strict_types=1);
 
 namespace App\Domain\Common\TwigExtension;
 
-use App\Domain\Common\Utils\GoogleTranslateHelper;
 use Stichoza\GoogleTranslate\GoogleTranslate;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Twig\Extension\AbstractExtension;
 use Twig\TwigFilter;
-use Twig\TwigFunction;
 
 /**
  * Class GoogleTranslateExtension
@@ -54,6 +52,10 @@ class GoogleTranslateExtension extends AbstractExtension
      */
     public function translate(string $text)
     {
+        if (is_null($this->requestStack->getCurrentRequest())) {
+            return $text;
+        }
+
         return GoogleTranslate::trans(
             $text,
             $this->requestStack->getCurrentRequest()->getLocale(),
