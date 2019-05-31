@@ -14,6 +14,16 @@ jobs:
             - run: sudo php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
             - run: sudo php composer-setup.php
             - run: sudo php -r "unlink('composer-setup.php');"
+            - run: sudo composer self-update
+            - restore_cache:
+                keys:
+                 - composer-v1-{{ checksum "composer.lock" }}
+                 - composer-v1-
+            - run: sudo SYMFONY_ENV=behat php -d memory_limit=-1 composer.phar install --no-scripts -n
+            - save_cache:
+                key: composer-v1-{{ checksum "composer.lock" }}
+                paths:
+                  - vendor
             - run: sudo php -d memory_limit=-1 composer.phar install -n --optimize-autoloader --apcu-autoloader
             - run: sudo php -d memory_limit=-1 composer.phar dump-autoload --optimize --apcu
             - run: ./bin/console d:d:c --env=test

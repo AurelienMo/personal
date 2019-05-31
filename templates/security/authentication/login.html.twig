@@ -4,17 +4,38 @@
 <div class="container-fluid login mt-5 pt-5 pl-5 pr-5">
     <div class="row justify-content-center">
         <div class="col-md-6 mb-md-0 mb-5">
-            {% if error %}
-                <div class="col-12 alert alert-danger alert-dismissible fade show text-center" role="alert">
-                    {{ error.messageKey|trans(error.messageData, 'messages') }}
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+            <div class="card">
+                <div class="card-header text-center elegant-color text-white font-weight-bold">
+                    <h4 class="card-title text-uppercase">Connexion</h4>
                 </div>
-            {% endif %}
-            {% form_theme form 'forms/security/_login.html.twig' %}
-            {{ form(form) }}
+                <div class="card-body text-center">
+                    <div class="card-text">
+                        {% if error %}
+                            <div class="col-12 alert alert-danger alert-dismissible fade show text-center" role="alert">
+                                {{ error.messageKey|trans(error.messageData, 'messages') }}
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        {% endif %}
+                        {% form_theme form 'forms/security/_login.html.twig' %}
+                        {{ form(form) }}
+                    </div>
+                    <div class="divider-new mt-2">
+                        <a data-href="{{ path('recovery_password_get') }}"
+                           data-toggle="modal"
+                           data-target="#fullPageModal"
+                        >
+                            {{ 'modal.title.lost_password'|trans }}
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+<script src="{{ asset('build/login.js') }}"></script>
 {% endblock %}

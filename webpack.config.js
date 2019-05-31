@@ -23,6 +23,7 @@ Encore
     .addEntry('entry', './assets/js/entry.js')
     .addEntry('home', './assets/js/home.js')
     .addEntry('admin', './assets/js/admin.js')
+    .addEntry('login', './assets/js/login.js')
 
     .copyFiles({
         from: './assets/images',

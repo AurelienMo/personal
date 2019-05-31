@@ -1,0 +1,33 @@
+framework:
+    workflows:
+        add_article:
+            marking_store:
+                type: 'multiple_state'
+                arguments:
+                    - state
+            supports:
+                - App\Entity\Article
+            places:
+                - create
+                - draft
+                - reviewed
+                - published
+                - invisible
+                - refused
+            transitions:
+                new:
+                    from: create
+                    to: draft
+                review:
+                    from: [draft, invisible]
+                    to: reviewed
+                publish:
+                    from: reviewed
+                    to: published
+                refused:
+                    from: reviewed
+                    to: refused
+                invisible:
+                    from: [refused, published]
+                    to: invisible
+

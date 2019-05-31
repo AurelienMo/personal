@@ -74,6 +74,13 @@ class User extends AbstractEntity implements UserInterface
     protected $roles;
 
     /**
+     * @var string|null
+     *
+     * @ORM\Column(type="string", nullable=true)
+     */
+    protected $tokenResetPassword;
+
+    /**
      * User constructor.
      *
      * @throws \Exception
@@ -203,5 +210,19 @@ class User extends AbstractEntity implements UserInterface
     public function __toString()
     {
         return sprintf('%s %s', $this->firstname, $this->lastname);
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getTokenResetPassword(): ?string
+    {
+        return $this->tokenResetPassword;
+    }
+
+    public function resetAccount(string $token)
+    {
+        $this->tokenResetPassword = $token;
+        $this->status = UserStatus::STATUS_LOCK;
     }
 }
