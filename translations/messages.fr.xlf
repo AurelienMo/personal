@@ -142,6 +142,18 @@
                 <source>error.locked</source>
                 <target>Votre compte est bloqué. Merci de contacter les administrateurs.</target>
             </trans-unit>
+            <trans-unit id="form.lost_password.identifier">
+                <source>form.lost_password.identifier</source>
+                <target>Identifiant</target>
+            </trans-unit>
+            <trans-unit id="modal.title.lost_password">
+                <source>modal.title.lost_password</source>
+                <target>Mot de passe oublié ?</target>
+            </trans-unit>
+            <trans-unit id="confirm_receive_lost_password">
+                <source>confirm_receive_lost_password</source>
+                <target>Nous vous confirmons la bonne réception de votre demande de réinitialisation de mot de passe. Merci de vérifier vos mails.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

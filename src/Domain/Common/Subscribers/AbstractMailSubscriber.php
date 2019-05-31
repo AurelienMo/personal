@@ -15,6 +15,7 @@ namespace App\Domain\Common\Subscribers;
 
 use App\Domain\Common\Utils\MailHelper;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * Class AbstractMailSubscriber
@@ -27,18 +28,24 @@ class AbstractMailSubscriber implements EventSubscriberInterface
     /** @var MailHelper */
     protected $mailHelper;
 
+    /** @var TranslatorInterface */
+    protected $translator;
+
     /**
      * AbstractMailSubscriber constructor.
      *
-     * @param array      $paramsMailApp
-     * @param MailHelper $mailHelper
+     * @param array               $paramsMailApp
+     * @param MailHelper          $mailHelper
+     * @param TranslatorInterface $translator
      */
     public function __construct(
         array $paramsMailApp,
-        MailHelper $mailHelper
+        MailHelper $mailHelper,
+        TranslatorInterface $translator
     ) {
         $this->paramsMailApp = $paramsMailApp;
         $this->mailHelper = $mailHelper;
+        $this->translator = $translator;
     }
 
     /**

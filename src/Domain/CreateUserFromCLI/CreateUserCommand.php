@@ -79,7 +79,7 @@ class CreateUserCommand extends Command
         $user->setUsername($fieldsUser['username']);
         $user->setEmail($fieldsUser['email']);
         $user->setPassword(
-            ($this->encoderFactory->getEncoder(User::class))->encodePassword($fieldsUser['email'], '')
+            ($this->encoderFactory->getEncoder(User::class))->encodePassword($fieldsUser['password'], '')
         );
         $user->setFirstname($fieldsUser['firstname']);
         $user->setLastname($fieldsUser['lastname']);
