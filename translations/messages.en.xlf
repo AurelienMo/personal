@@ -154,6 +154,10 @@
                 <source>confirm_receive_lost_password</source>
                 <target>We confirm the successful receipt of your password reset request. Thank you for checking your mails.</target>
             </trans-unit>
+            <trans-unit id="mail.subject.recovery_password">
+                <source>mail.subject.recovery_password</source>
+                <target>Reset your password</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

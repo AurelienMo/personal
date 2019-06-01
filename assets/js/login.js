@@ -1,5 +1,9 @@
+import Loader from "./components/Loader";
+
+let $loader = new Loader();
 window.$('body').on('submit', '.ajaxForm', function (e) {
     e.preventDefault();
+    $loader.display();
     let modal = $('.modal-body');
     $.ajax({
         type: $(this).attr('method'),
@@ -10,6 +14,7 @@ window.$('body').on('submit', '.ajaxForm', function (e) {
             if (typeof data.message !== 'undefined') {
                 modal.html(data.html);
             }
+            $loader.hide();
         })
         .fail(function (jqXHR, textStatus, errorThrown) {
             if (typeof jqXHR.responseJSON !== 'undefined') {
@@ -19,5 +24,6 @@ window.$('body').on('submit', '.ajaxForm', function (e) {
             } else {
                 alert(errorThrown);
             }
+            $loader.hide();
         })
 });
