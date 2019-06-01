@@ -21,7 +21,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
  */
 class RecoveryPasswordMailSubscriber extends AbstractMailSubscriber
 {
-    const SUBJECT_MAIL = '';
+    const SUBJECT_MAIL = 'mail.subject.recovery_password';
 
     public static function getSubscribedEvents()
     {

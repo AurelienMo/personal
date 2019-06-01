@@ -154,6 +154,10 @@
                 <source>confirm_receive_lost_password</source>
                 <target>Nous vous confirmons la bonne réception de votre demande de réinitialisation de mot de passe. Merci de vérifier vos mails.</target>
             </trans-unit>
+            <trans-unit id="mail.subject.recovery_password">
+                <source>mail.subject.recovery_password</source>
+                <target>Réinitialiser votre mot de passe</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>
