@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace App\Actions\Security\Authentication;
 
 use App\Domain\User\Authentication\LoginType;
-use App\Responders\ViewResponder;
+use Morvan\Bundle\RespondersBundle\Responders\ViewResponder;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;

@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace App\Actions\Core;
 
 use App\Repository\MenuRepository;
-use App\Responders\ViewResponder;
+use Morvan\Bundle\RespondersBundle\Responders\ViewResponder;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;

@@ -26,6 +26,10 @@
                 <source>message.required</source>
                 <target>Le message est requis.</target>
             </trans-unit>
+            <trans-unit id="identifier.required">
+                <source>identifier.required</source>
+                <target>Identifiant requis.</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

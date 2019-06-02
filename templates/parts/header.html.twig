@@ -20,6 +20,13 @@
                             {{ 'menu.login'|trans }} {% if app.request.attributes.get('_route') == 'security_login' %}<span class="sr-only">(current)</span>{% endif %}
                         </a>
                     </li>
+                    {{ dump(app.request.attributes.get('_route')|split('_')) }}
+{#                    <li class="nav-item {% if app.request.attributes.get('_route')|split('_')[1] == 'registration' %}active{% endif %}">#}
+{#                        <a class="nav-link" href="{{ path('security_login') }}">#}
+{#                            <i class="fas fa-sign-in-alt"></i>#}
+{#                            {{ 'menu.login'|trans }} {% if app.request.attributes.get('_route') == 'security_login' %}<span class="sr-only">(current)</span>{% endif %}#}
+{#                        </a>#}
+{#                    </li>#}
                 {% else %}
                     {% if is_granted('ROLE_ADMIN') %}
                         <li class="nav-item">

@@ -15,8 +15,8 @@ namespace App\Actions;
 
 use App\Domain\FormContact\ContactFormType;
 use App\Domain\FormContact\FormHandler;
-use App\Responders\RedirectResponder;
-use App\Responders\ViewResponder;
+use Morvan\Bundle\RespondersBundle\Responders\RedirectResponder;
+use Morvan\Bundle\RespondersBundle\Responders\ViewResponder;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -55,7 +55,6 @@ class Home
     /**
      * @param Request           $request
      * @param ViewResponder     $viewResponder
-     *
      * @param RedirectResponder $redirectResponder
      *
      * @return Response
