@@ -40,7 +40,8 @@ class ParamsResponseBuild
         return [
             'datas' => [
                 'html' => is_null($form) ?
-                    $this->templating->render($template) : $this->templating->render($template, ['form' => $form->createView()]),
+                    $this->templating->render($template) :
+                    $this->templating->render($template, ['form' => $form->createView()]),
                 'message' => is_null($form) ? 'error' : 'success',
             ],
             'statusCode' => is_null($form) ? 200 : 400

@@ -66,7 +66,6 @@ class RecoveryPasswordResolver
         $user->resetAccount(TokenGeneratorHelper::generate());
         $this->userRepository->save();
         $this->eventDispatcher->dispatch(
-            RecoveryPasswordMailEvent::RECOVERY_PASSWORD_MAIL,
             new RecoveryPasswordMailEvent($user)
         );
     }
