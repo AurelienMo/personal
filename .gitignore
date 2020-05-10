@@ -35,3 +35,6 @@ yarn-error.log
 .vagrant
 .idea
 ubuntu-xenial-16.04-cloudimg-console.log
+/docker/apache/logs/app_access.log
+/docker/apache/logs/app_error.log
+/docker/mysql/mysql/
