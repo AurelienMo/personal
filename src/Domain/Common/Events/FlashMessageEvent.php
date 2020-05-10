@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace App\Domain\Common\Events;
 
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * Class FlashMessageEvent

@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace App\Domain\FormContact\Event;
 
 use App\Domain\FormContact\ContactDTO;
-use Symfony\Component\EventDispatcher\Event;
+use Symfony\Contracts\EventDispatcher\Event;
 
 /**
  * Class ContactMailEvent

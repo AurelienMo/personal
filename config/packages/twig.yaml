@@ -6,3 +6,4 @@ twig:
         - 'forms/_layout.html.twig'
     globals:
         ga_tag: '%env(resolve:GTAG)%'
+    exception_controller: null
