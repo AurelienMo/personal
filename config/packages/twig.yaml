@@ -4,3 +4,5 @@ twig:
     strict_variables: '%kernel.debug%'
     form_themes:
         - 'forms/_layout.html.twig'
+    globals:
+        ga_tag: '%env(resolve:GTAG)%'

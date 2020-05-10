@@ -4,17 +4,46 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="robots" content="index, follow">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.0/css/mdb.min.css" rel="stylesheet">
+        <meta name="description" content="Developpeur Symfony freelance sur Marseille. Développement d'application web et logiciel">
         <link rel="stylesheet" href="{{ asset('build/entry.css') }}">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}Aurelien Morvan{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
         {% include 'parts/header.html.twig' %}
 {#        {% include 'parts/_language.html.twig' %}#}
         {% block body %}{% endblock %}
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/AmauriC/tarteaucitron.js@V1.2/tarteaucitron.min.js"></script>
+        <script type="text/javascript">
+            tarteaucitron.user.gtagUa = '{{ ga_tag }}';
+            tarteaucitron.user.gtagMore = function () {};
+            (tarteaucitron.job = tarteaucitron.job || []).push('gtag');
+        </script>
+        <script type="text/javascript">
+            tarteaucitron.init({
+                "hashtag": "#AurelienMorvan", /* Open the panel with this hashtag */
+                "cookieName": "morvan_tech", /* Cookie name */
+
+                "orientation": "bottom", /* Banner position (top - bottom) */
+                "showAlertSmall": false, /* Show the small banner on bottom right */
+                "cookieslist": true, /* Show the cookie list */
+
+                "adblocker": true, /* Show a Warning if an adblocker is detected */
+                "AcceptAllCta" : true, /* Show the accept all button when highPrivacy on */
+                "highPrivacy": true, /* Disable auto consent */
+                "handleBrowserDNTRequest": false, /* If Do Not Track == 1, disallow all */
+                "removeCredit": false, /* Remove credit link */
+                "moreInfoLink": true, /* Show more info link */
+                "useExternalCss": false, /* If false, the tarteaucitron.css file will be loaded */
+                //"cookieDomain": ".my-multisite-domaine.fr", /* Shared cookie for multisite */
+                "readmoreLink": "/cookiespolicy" /* Change the default readmore link */
+            });
+            window.tarteaucitronForceLanguage = 'fr';
+        </script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
