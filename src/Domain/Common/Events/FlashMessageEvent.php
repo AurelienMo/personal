@@ -20,8 +20,6 @@ use Symfony\Contracts\EventDispatcher\Event;
  */
 class FlashMessageEvent extends Event
 {
-    const FLASH_MESSAGE = 'app.flash_message';
-
     /** @var string */
     protected $type;
 

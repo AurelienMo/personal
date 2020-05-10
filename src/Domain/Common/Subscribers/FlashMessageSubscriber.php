@@ -51,7 +51,7 @@ class FlashMessageSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return [
-            FlashMessageEvent::FLASH_MESSAGE => 'onAddFlash',
+            FlashMessageEvent::class => 'onAddFlash',
         ];
     }
 

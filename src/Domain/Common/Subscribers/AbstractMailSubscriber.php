@@ -24,9 +24,6 @@ class AbstractMailSubscriber implements EventSubscriberInterface
     /** @var array */
     protected $paramsMailApp;
 
-    /** @var MailHelper */
-    protected $mailHelper;
-
     /**
      * AbstractMailSubscriber constructor.
      *
@@ -34,11 +31,10 @@ class AbstractMailSubscriber implements EventSubscriberInterface
      * @param MailHelper $mailHelper
      */
     public function __construct(
-        array $paramsMailApp,
-        MailHelper $mailHelper
+        array $paramsMailApp
+
     ) {
         $this->paramsMailApp = $paramsMailApp;
-        $this->mailHelper = $mailHelper;
     }
 
     /**

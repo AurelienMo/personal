@@ -41,12 +41,8 @@ class FormHandler
     {
         if ($form->isSubmitted() && $form->isValid()) {
             $data = $form->getData();
+            $this->eventDispatcher->dispatch(new ContactMailEvent($data));
             $this->eventDispatcher->dispatch(
-                ContactMailEvent::MAIL_CONTACT_EVENT,
-                new ContactMailEvent($data)
-            );
-            $this->eventDispatcher->dispatch(
-                FlashMessageEvent::FLASH_MESSAGE,
                 new FlashMessageEvent(
                     'success',
                     'flash.contact.success'

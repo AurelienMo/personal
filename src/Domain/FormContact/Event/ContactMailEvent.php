@@ -21,8 +21,6 @@ use Symfony\Contracts\EventDispatcher\Event;
  */
 class ContactMailEvent extends Event
 {
-    const MAIL_CONTACT_EVENT = 'app.mails.contact';
-
     /** @var ContactDTO */
     protected $contact;
 
